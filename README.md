@@ -1,4 +1,4 @@
-![image](https://github.com/TooBunReal/bandit-wu/assets/89735990/8afac0d6-9c49-4ff2-8293-539660f998f9)# WU_for_ae
+# WU_for_ae_dont_copy_meo_meo
 - Sẽ có những chall mình lười nên chỉ chụp payload ( mong mn hiểu cho sự lười này :'> )
 - Chall nào mình thấy hơi khó hiểu thì sẽ giải thích một xíu nha.
 ## Bandit 0
