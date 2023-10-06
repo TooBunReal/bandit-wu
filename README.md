@@ -93,6 +93,13 @@
   pass: ```wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw```
   
 ## Bandit 12->13
+  ```ssh bandit13@bandit.labs.overthewire.org -p 2220:wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw```
+  - Truy cập vào thì ta nhận dc một key RSA.
+  - Mình dùng lệnh ```scp -P 2220 bandit13@bandit.labs.overthewire.org:sshkey.private``` để dowload key về.
+  - Tiến hành cấp quyền và kết nối với chall14 thông qua key.
+  
+  ![image](https://github.com/TooBunReal/bandit-wu/assets/89735990/bbd024f4-5dbe-468d-9a85-c281723f1310)
+ 
 ## Bandit 13->14
 ## Bandit 14->15
 ## Bandit 15->16
