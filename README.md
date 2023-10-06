@@ -1,4 +1,6 @@
 # WU_for_ae
+- Sẽ có những chall mình lười nên chỉ chụp payload ( mong mn hiểu cho sự lười này :'> )
+- Chall nào mình thấy hơi khó hiểu thì sẽ giải thích một xíu nha.
 ## Bandit 0
   ```ssh bandit0@bandit.labs.overthewire.org -p 2220```
   
@@ -11,10 +13,37 @@
   ![image](https://github.com/TooBunReal/bandit-wu/assets/89735990/50c4da73-97ca-4b3f-97c0-f496a70da43e)
 
   pass: ```rRGizSaX8Mk1RTb1CNQoXTcYZWU6lgzi```
+  
 ## Bandit 1->2
+  ```ssh bandit2@bandit.labs.overthewire.org -p 2220:rRGizSaX8Mk1RTb1CNQoXTcYZWU6lgzi```
+  
+  ![image](https://github.com/TooBunReal/bandit-wu/assets/89735990/683ee8ee-822b-47cc-b81a-843dab0e9e07)
+  
+  pass: ```aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG```
 ## Bandit 2->3
+  ```ssh bandit3@bandit.labs.overthewire.org -p 2220:aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG```
+
+  ![image](https://github.com/TooBunReal/bandit-wu/assets/89735990/2ef767a7-a588-4871-93ac-a317f49a05ec)
+
+  pass: ```2EW7BBsr6aMMoJ2HjW067dm8EgX26xNe```
+
 ## Bandit 3->4
+  ```ssh bandit4@bandit.labs.overthewire.org -p 2220:2EW7BBsr6aMMoJ2HjW067dm8EgX26xNe```
+
+  ![image](https://github.com/TooBunReal/bandit-wu/assets/89735990/1fabb68f-1715-4bc5-bc5c-9ac1587054f3)
+  
+  pass: ```lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR```
+  
 ## Bandit 4->5
+  ![image](https://github.com/TooBunReal/bandit-wu/assets/89735990/db81f563-0b70-47a7-bce5-7f28e03f211a)
+
+  
+  ```ssh bandit5@bandit.labs.overthewire.org -p 2220:lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR```
+
+  ![image](https://github.com/TooBunReal/bandit-wu/assets/89735990/e3f64d09-a82f-4cff-92bf-0a0f176ca2cf)
+
+  pass: ```P4L4vucdmLnm8I7Vl7jG1ApGSfjYKqJU```
+  
 ## Bandit 5->6
 ## Bandit 6->7
 ## Bandit 7->8
