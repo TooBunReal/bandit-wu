@@ -197,8 +197,18 @@ ssh -i key bandit17@bandit.labs.overthewire.org -p 2220
 
 ## Bandit 19->20
   ```ssh bandit20@bandit.labs.overthewire.org -p 2220:VxCazJaVykI6W36BkBU0mJTCM8rR95XT```
+  - Đối với chall này chúng ta cần thực hiện một vài kĩ thuật mạng căn bản.
+  - Ở đây mình sẽ chuẩn bị 2 terminal để kết nối vào chall.
+  - Để tiện giải thích mình sẽ gọi terminal bên phải là A còn B là bên trái.
+  - Đầu liên ở A ta sẽ dùng lệnh ```nc -lvp 4444``` để có thể lắng nghe ở port 4444.
+  - Tiếp theo, bên B sẽ chạy file kết nối với port vừa setup ở trên ```./suconnect 4444``` .
+  - Cuối cùng, ta sẽ dùng A để send pass của chall trước cho B read và send lại cho A.
+  ![image](https://github.com/TooBunReal/bandit-wu/assets/89735990/5a883689-e14c-43e9-b741-d7af68dcc37a)
+
+  pass: ```NvEJF7oVjkddltPSrdKEFOllh9V1IBcq```
   
 ## Bandit 20->21
+  ```ssh bandit21@bandit.labs.overthewire.org -p 2220:NvEJF7oVjkddltPSrdKEFOllh9V1IBcq```
 ## Bandit 21->22
 ## Bandit 22->23
 ## Bandit 23->24
