@@ -1,4 +1,4 @@
-![image](https://github.com/TooBunReal/bandit-wu/assets/89735990/d3ad7ee5-b9fa-466b-b9b7-f99fd344b18b)# WU_for_ae_dont_copy_meo_meo
+# WU_for_ae_dont_copy_meo_meo
 - Sẽ có những chall mình lười nên chỉ chụp payload ( mong mn hiểu cho sự lười này :'> )
 - Chall nào mình thấy hơi khó hiểu thì sẽ giải thích một xíu nha.
 ## Bandit 0
@@ -166,9 +166,38 @@ vBgsyi/sN3RqRBcGU40fOoZyfAMT8s1m/uYv52O6IgeuZ/ujbjY=
   ```
   
 ## Bandit 16->17
+  - Ở bài này chúng ta sẽ không connect như những lần trước, thay vào đó ta sẽ phải ssh vào bằng Key đã lấy được ở chall phía trên.
+  - Nhưng trước hết, bạn cần phải cấp quyền cho key
+  ```
+chmod 400 key
+ssh -i key bandit17@bandit.labs.overthewire.org -p 2220
+  ```
+  ![image](https://github.com/TooBunReal/bandit-wu/assets/89735990/de3edaef-1f33-4dce-8b66-74b693c57566)
+
+  pass: ```hga5tuuCLF6fFzUpnagiMN8ssu9LFrdg```
 ## Bandit 17->18
+  ```ssh bandit18@bandit.labs.overthewire.org -p 2220:hga5tuuCLF6fFzUpnagiMN8ssu9LFrdg```
+
+  ![image](https://github.com/TooBunReal/bandit-wu/assets/89735990/68161f5c-3512-4f45-b4b4-e8130da3188b)
+  
+  - Oh no, có lẽ chúng ta không được chào đón ở đây rồi.
+  - Tuy nhiên, dựa theo hint của đề bài, ta có thể chèn cmd vào ngay sau ssh để nó tự động exec.
+
+  ```ssh bandit18@bandit.labs.overthewire.org -p 2220 "cat *"```
+
+  ![image](https://github.com/TooBunReal/bandit-wu/assets/89735990/f79b55df-a82a-4dbf-8fb0-e60c80dba55c)
+
+  pass: ```awhqfNnAbc1naukrpqDYcF95h7HoMTrC```
 ## Bandit 18->19
+  ```ssh bandit19@bandit.labs.overthewire.org -p 2220:awhqfNnAbc1naukrpqDYcF95h7HoMTrC```
+
+  ![image](https://github.com/TooBunReal/bandit-wu/assets/89735990/adb71d66-8873-4362-9847-55883ef243a2)
+
+  pass: ```VxCazJaVykI6W36BkBU0mJTCM8rR95XT```
+
 ## Bandit 19->20
+  ```ssh bandit20@bandit.labs.overthewire.org -p 2220:VxCazJaVykI6W36BkBU0mJTCM8rR95XT```
+  
 ## Bandit 20->21
 ## Bandit 21->22
 ## Bandit 22->23
