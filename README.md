@@ -1,4 +1,4 @@
-# WU_for_ae_dont_copy_meo_meo
+![image](https://github.com/TooBunReal/bandit-wu/assets/89735990/d3ad7ee5-b9fa-466b-b9b7-f99fd344b18b)# WU_for_ae_dont_copy_meo_meo
 - Sẽ có những chall mình lười nên chỉ chụp payload ( mong mn hiểu cho sự lười này :'> )
 - Chall nào mình thấy hơi khó hiểu thì sẽ giải thích một xíu nha.
 ## Bandit 0
@@ -101,8 +101,70 @@
   ![image](https://github.com/TooBunReal/bandit-wu/assets/89735990/bbd024f4-5dbe-468d-9a85-c281723f1310)
  
 ## Bandit 13->14
+  ```ssh -i sshkey.private bandit14@bandit.labs.overthewire.org -p 2220```
+  ![image](https://github.com/TooBunReal/bandit-wu/assets/89735990/ff4ba056-4418-4b48-8ca1-caff39afb87b)
+
+  pass: ```jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt```
 ## Bandit 14->15
+  ```ssh bandit15@bandit.labs.overthewire.org -p 2220:jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt```
+
+  ![image](https://github.com/TooBunReal/bandit-wu/assets/89735990/5fdf602f-c0ff-4980-baf2-c37c3872c250)
+
+  pass:```JQttfApK4SeyHwDlI9SXGR50qclOAil1```
+  
 ## Bandit 15->16
+  ```ssh bandit16@bandit.labs.overthewire.org -p 2220:JQttfApK4SeyHwDlI9SXGR50qclOAil1```
+
+  - Bài này chúng ra sẽ làm quen với khái niệm Bash script.
+  - Bạn có thể làm tay nếu muốn, nhưng làm bằng script nhàn hơn :>
+  - Ý tưởng của bài này là check port từ 31000 tới 32000 xem có cổng nào đang mở hay không từ đó có thể kết nối vào đó để lấy pass.
+  ```sh
+for i in {31000..32000} ; do
+SERVER="localhost"
+PORT=$i
+(echo  > /dev/tcp/$SERVER/$PORT) >& /dev/null &&
+echo "Port $PORT open"
+done
+```
+
+  ![image](https://github.com/TooBunReal/bandit-wu/assets/89735990/a8b8a11b-4aff-4732-bbc1-e7f5812e3080)
+
+  - Với các cổng đã mở, ta sẽ kết nối ssl với cổng đó.
+
+  ![image](https://github.com/TooBunReal/bandit-wu/assets/89735990/f987348d-87fd-45ed-89c4-c347ede14fe4)
+
+
+  pass: 
+  ```
+-----BEGIN RSA PRIVATE KEY-----
+MIIEogIBAAKCAQEAvmOkuifmMg6HL2YPIOjon6iWfbp7c3jx34YkYWqUH57SUdyJ
+imZzeyGC0gtZPGujUSxiJSWI/oTqexh+cAMTSMlOJf7+BrJObArnxd9Y7YT2bRPQ
+Ja6Lzb558YW3FZl87ORiO+rW4LCDCNd2lUvLE/GL2GWyuKN0K5iCd5TbtJzEkQTu
+DSt2mcNn4rhAL+JFr56o4T6z8WWAW18BR6yGrMq7Q/kALHYW3OekePQAzL0VUYbW
+JGTi65CxbCnzc/w4+mqQyvmzpWtMAzJTzAzQxNbkR2MBGySxDLrjg0LWN6sK7wNX
+x0YVztz/zbIkPjfkU1jHS+9EbVNj+D1XFOJuaQIDAQABAoIBABagpxpM1aoLWfvD
+KHcj10nqcoBc4oE11aFYQwik7xfW+24pRNuDE6SFthOar69jp5RlLwD1NhPx3iBl
+J9nOM8OJ0VToum43UOS8YxF8WwhXriYGnc1sskbwpXOUDc9uX4+UESzH22P29ovd
+d8WErY0gPxun8pbJLmxkAtWNhpMvfe0050vk9TL5wqbu9AlbssgTcCXkMQnPw9nC
+YNN6DDP2lbcBrvgT9YCNL6C+ZKufD52yOQ9qOkwFTEQpjtF4uNtJom+asvlpmS8A
+vLY9r60wYSvmZhNqBUrj7lyCtXMIu1kkd4w7F77k+DjHoAXyxcUp1DGL51sOmama
++TOWWgECgYEA8JtPxP0GRJ+IQkX262jM3dEIkza8ky5moIwUqYdsx0NxHgRRhORT
+8c8hAuRBb2G82so8vUHk/fur85OEfc9TncnCY2crpoqsghifKLxrLgtT+qDpfZnx
+SatLdt8GfQ85yA7hnWWJ2MxF3NaeSDm75Lsm+tBbAiyc9P2jGRNtMSkCgYEAypHd
+HCctNi/FwjulhttFx/rHYKhLidZDFYeiE/v45bN4yFm8x7R/b0iE7KaszX+Exdvt
+SghaTdcG0Knyw1bpJVyusavPzpaJMjdJ6tcFhVAbAjm7enCIvGCSx+X3l5SiWg0A
+R57hJglezIiVjv3aGwHwvlZvtszK6zV6oXFAu0ECgYAbjo46T4hyP5tJi93V5HDi
+Ttiek7xRVxUl+iU7rWkGAXFpMLFteQEsRr7PJ/lemmEY5eTDAFMLy9FL2m9oQWCg
+R8VdwSk8r9FGLS+9aKcV5PI/WEKlwgXinB3OhYimtiG2Cg5JCqIZFHxD6MjEGOiu
+L8ktHMPvodBwNsSBULpG0QKBgBAplTfC1HOnWiMGOU3KPwYWt0O6CdTkmJOmL8Ni
+blh9elyZ9FsGxsgtRBXRsqXuz7wtsQAgLHxbdLq/ZJQ7YfzOKU4ZxEnabvXnvWkU
+YOdjHdSOoKvDQNWu6ucyLRAWFuISeXw9a/9p7ftpxm0TSgyvmfLF2MIAEwyzRqaM
+77pBAoGAMmjmIJdjp+Ez8duyn3ieo36yrttF5NSsJLAbxFpdlc1gvtGCWW+9Cq0b
+dxviW8+TFVEBl1O4f7HVm6EpTscdDxU+bCXWkfjuRb7Dy9GOtt9JPsX8MBTakzh3
+vBgsyi/sN3RqRBcGU40fOoZyfAMT8s1m/uYv52O6IgeuZ/ujbjY=
+-----END RSA PRIVATE KEY-----
+  ```
+  
 ## Bandit 16->17
 ## Bandit 17->18
 ## Bandit 18->19
