@@ -209,8 +209,46 @@ ssh -i key bandit17@bandit.labs.overthewire.org -p 2220
   
 ## Bandit 20->21
   ```ssh bandit21@bandit.labs.overthewire.org -p 2220:NvEJF7oVjkddltPSrdKEFOllh9V1IBcq```
+  
+  ![image](https://github.com/TooBunReal/bandit-wu/assets/89735990/29d2210f-f0f8-44f1-8dce-2a8d5465b2e6)
+
+  pass: ```WdDozAdTM2z9DiFEQ2mGlwngMfj4EZff```
+  
 ## Bandit 21->22
+  ```ssh bandit22@bandit.labs.overthewire.org -p 2220:WdDozAdTM2z9DiFEQ2mGlwngMfj4EZff```
+  - Chall này chúng ta có cách tiếp cận tương tự Chall21, nhưng khác ở điểm là chúng ta không biết chính xác file pass nằm ở đâu.
+  - Đọc sơ qua file bash shell thì ta sẽ thấy vị trí lưu pass được đặt ở kết quả của dòng lệnh ```mytarget=$(echo I am user $myname | md5sum | cut -d ' ' -f 1)```
+  - Vì thế mình chỉ đơn giản là dùng ```echo "I am user bandit23" | md5sum``` để tìm địa chỉ chính xác của pass.
+
+  ![image](https://github.com/TooBunReal/bandit-wu/assets/89735990/8570e16c-87c7-4596-b5bc-1b9b727595be)
+
+  pass: ```QYw0Y2aiA672PsMmh9puTQuhoz8SyR2G```
+      
 ## Bandit 22->23
+  ```ssh bandit23@bandit.labs.overthewire.org -p 2220:QYw0Y2aiA672PsMmh9puTQuhoz8SyR2G```
+  ![image](https://github.com/TooBunReal/bandit-wu/assets/89735990/cbe96f7c-4279-4457-b339-d8af7c3e7ad1)
+
+  - Tới chall này thì mọi thứ bắt đầu khó nhằn hơn ( với một đứa lười như mình, I wish I were a panda :< )
+  - Trong file bash shell này chúng ta cần quan tâm để một vài vấn đề sau: 
+      + Thư mục làm việc sẽ nằm ở ```/var/spool/bandit23/foo```.
+      + Những file bị xóa sẽ không bao gồm ```.. && .```.
+      + Nếu file thuộc chủ sở hữu là ```bandit23``` thì nó sẽ được exec trong 60 giây và bắt buộc phải kết thúc, sau đó nó sẽ bị xóa.
+  - Chúng ta sẽ chú ý đến điều kiện thứ 3, mọi file đều sẽ được exec trong 60 trước khi bị xóa, điều này sẽ tạo cơ hội cho chúng ta kịp thời lấy được pass trước khi nó biến mất.
+  - Để thực hiện điều đó mình sẽ tạo một file solve.sh ở ```/tmp/tmp.g63SxkMcGC``` ( tránh nó bị xóa không mong muốn ).
+
+  ```sh
+#!/bin/bash
+cat /etc/bandit_pass/bandit24 > /tmp/tmp.g63SxkMcGC/hehe
+  ```
+  - Và hãy nhớ, làm gì làm phải cắp quyền cho file.
+
+  ![image](https://github.com/TooBunReal/bandit-wu/assets/89735990/aa8b3982-058b-41cc-b8d6-e04c37ecb709)
+
+  
+  ![image](https://github.com/TooBunReal/bandit-wu/assets/89735990/78034b17-e4a9-4751-9735-ae1b74c7de32)
+
+  pass: ```VAfGXJ1PBSsPSnvsjI8p759leLZ9GGar```
+    
 ## Bandit 23->24
 ## Bandit 24->25
 ## Bandit 25->26
