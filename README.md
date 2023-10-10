@@ -1,6 +1,7 @@
 # WU_for_ae_dont_copy_meo_meo
 - Sẽ có những chall mình lười nên chỉ chụp payload ( mong mn hiểu cho sự lười này :'> )
 - Chall nào mình thấy hơi khó hiểu thì sẽ giải thích một xíu nha.
+- Mấy cái này trên mạng có đầy =)) 
 ## Bandit 0
   ```ssh bandit0@bandit.labs.overthewire.org -p 2220```
   
