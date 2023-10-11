@@ -232,7 +232,7 @@ ssh -i key bandit17@bandit.labs.overthewire.org -p 2220
   - Tới chall này thì mọi thứ bắt đầu khó nhằn hơn ( với một đứa lười như mình, I wish I were a panda :< )
   - Trong file bash shell này chúng ta cần quan tâm để một vài vấn đề sau: 
       + Thư mục làm việc sẽ nằm ở ```/var/spool/bandit23/foo```.
-      + Những file bị xóa sẽ không bao gồm ```.. && .```.
+      + Những file bị xóa sẽ không bao gồm ```.. && .```
       + Nếu file thuộc chủ sở hữu là ```bandit23``` thì nó sẽ được exec trong 60 giây và bắt buộc phải kết thúc, sau đó nó sẽ bị xóa.
   - Chúng ta sẽ chú ý đến điều kiện thứ 3, mọi file đều sẽ được exec trong 60 trước khi bị xóa, điều này sẽ tạo cơ hội cho chúng ta kịp thời lấy được pass trước khi nó biến mất.
   - Để thực hiện điều đó mình sẽ tạo một file solve.sh ở ```/tmp/tmp.g63SxkMcGC``` ( tránh nó bị xóa không mong muốn ).
