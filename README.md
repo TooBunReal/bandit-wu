@@ -1,4 +1,4 @@
-# WU_for_ae_dont_copy_meo_meo
+![image](https://github.com/TooBunReal/bandit-wu/assets/89735990/49ef21f8-7dea-4812-8dfc-58507093eb8f)# WU_for_ae_dont_copy_meo_meo
 - Sẽ có những chall mình lười nên chỉ chụp payload ( mong mn hiểu cho sự lười này :'> )
 - Chall nào mình thấy hơi khó hiểu thì sẽ giải thích một xíu nha.
 - Mấy cái này trên mạng có đầy =)) 
@@ -270,13 +270,50 @@ cat /tmp/result.txt | grep -v "Wrong!"
  ```
   - Ý tưởng của mình là lưu hết các trường hợp vào một file và cat từng dòng vào nc tương ứng.
   - Sau đó sẽ in ra kết quả cho mình.
+![image](https://github.com/TooBunReal/bandit-wu/assets/89735990/3aab3859-45dc-4e94-80cc-cb87373942d6)
+
+![image](https://github.com/TooBunReal/bandit-wu/assets/89735990/4a4c8d06-8513-4dd6-bb19-54d8179e1e00)
+
+  pass: ```p7TaowMYrmu23Ol8hiZh9UvD0O9hpx8d```
 
     
 ## Bandit 24->25
+  ```ssh bandit25@bandit.labs.overthewire.org -p 2220:p7TaowMYrmu23Ol8hiZh9UvD0O9hpx8d```
+  - Khi thấy file key của chall kế tiếp mình đã thử connect thử nhưng vừa vào thì bị đá ra ngoài.
+  
+  ![image](https://github.com/TooBunReal/bandit-wu/assets/89735990/fcbd4bf5-834f-4b5b-a5bd-c236db14ca72)
 
+  - Đọc sơ qua đoạn code giấu trong etc, thì nó sẽ set một biến môi trường là linux sau đó sẽ exit ngay khi show hết mọi thứ.
+  - Điểm đáng chú ý ở đây là lệnh More, nói nôm na thì nó sẽ hoạt động dựa trên cơ chê "phân trang" nếu thông tin chưa show hết thì nó sẽ đảm nhiệm vai trò show phần tiếp theo.
+  - Tuy nhiên, chúng ta có thể chạy vim editor ngày trên cái More này với option V.
+  - Giờ mình sẽ thử thu nhỏ terminal lại và dùng more.
+
+    ![image](https://github.com/TooBunReal/bandit-wu/assets/89735990/b9f4f216-92ce-48dc-8751-1ab0c330045b)
+
+    ![image](https://github.com/TooBunReal/bandit-wu/assets/89735990/7e7b826d-ac17-4942-a9dc-f0584ded648d)
+
+  - Sau khi gõ V thì mình đã vào được vim.
+  - Mình sẽ tận dụng chức năng gọi shell của Vim để lấy pass
+```
+  :set shell=/bin/bash
+  :sh
+```
+  - Khi đã có shell, mình có thể thực hiện luôn chall tiếp ở trong shell này, tuy nhiên mình sẽ làm luôn 2 việc để tiện đỡ phải connect làm lại.
+
+  ![image](https://github.com/TooBunReal/bandit-wu/assets/89735990/59ea4cf2-df3e-425b-abde-7f50fe082b6c)
+
+  pass: ```c7GvcKlw9mC7aUQaPx7nwFstuAIBw1o1```
+  
 ## Bandit 25->26
+
+  ![image](https://github.com/TooBunReal/bandit-wu/assets/89735990/70ba3347-4a28-40fd-9a90-5653b157d00a)
+
+  pass: ```YnQpBuifNMas1hcUFk70ZmqkhUU2EuaS```
+
 ## Bandit 26->27
+  ```ssh bandit27@bandit.labs.overthewire.org -p 2220:YnQpBuifNMas1hcUFk70ZmqkhUU2EuaS```
 ## Bandit 27->28
+
 ## Bandit 28->29
 ## Bandit 29->30
 ## Bandit 30->31
