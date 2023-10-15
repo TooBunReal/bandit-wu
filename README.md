@@ -189,6 +189,10 @@ ssh -i key bandit17@bandit.labs.overthewire.org -p 2220
   ![image](https://github.com/TooBunReal/bandit-wu/assets/89735990/f79b55df-a82a-4dbf-8fb0-e60c80dba55c)
 
   pass: ```awhqfNnAbc1naukrpqDYcF95h7HoMTrC```
+  
+  - Xin lỗi vì sự cợ nhã ở trên =))
+  - Giải thích một xíu thì đây là SSH pseudo-terminal, để không bị văng chúng ta đơn giản chỉ cần thêm option ```-T``` để disable pseudo-terminal là sẽ connect được.
+```ssh -T bandit18@bandit.labs.overthewire.org -p 2220```
 ## Bandit 18->19
   ```ssh bandit19@bandit.labs.overthewire.org -p 2220:awhqfNnAbc1naukrpqDYcF95h7HoMTrC```
 
@@ -251,7 +255,25 @@ cat /etc/bandit_pass/bandit24 > /tmp/tmp.g63SxkMcGC/hehe
   pass: ```VAfGXJ1PBSsPSnvsjI8p759leLZ9GGar```
     
 ## Bandit 23->24
+  ```ssh bandit24@bandit.labs.overthewire.org -p 2220:VAfGXJ1PBSsPSnvsjI8p759leLZ9GGar```
+  - Đề gợi ý rằng chúng ta cần brutefore để có thể giải.
+  - Máy chủ nc yêu cầu ta gửi pass của chall trước và một con số từ ( 0000 đến 9999 ).
+  - Ở đây mình có một đoạn code đơn giản để thực hiện yêu cầu trên.
+  ```sh
+#!/bin/bash
+pass="VAfGXJ1PBSsPSnvsjI8p759leLZ9GGar"
+for i in $(seq -w 9999); do
+    echo "$pass $i" >> /tmp/pass.txt
+done
+cat /tmp/brute.txt | nc localhost 30002 >> /tmp/result.txt
+cat /tmp/result.txt | grep -v "Wrong!"
+ ```
+  - Ý tưởng của mình là lưu hết các trường hợp vào một file và cat từng dòng vào nc tương ứng.
+  - Sau đó sẽ in ra kết quả cho mình.
+
+    
 ## Bandit 24->25
+
 ## Bandit 25->26
 ## Bandit 26->27
 ## Bandit 27->28
