@@ -1,4 +1,4 @@
-![image](https://github.com/TooBunReal/bandit-wu/assets/89735990/7ed3d85f-ab6e-4db9-a34c-e9b4dbee7761)![image](https://github.com/TooBunReal/bandit-wu/assets/89735990/49ef21f8-7dea-4812-8dfc-58507093eb8f)# WU_for_ae_dont_copy_meo_meo
+# WU_for_ae_dont_copy_meo_meo
 - Sẽ có những chall mình lười nên chỉ chụp payload ( mong mn hiểu cho sự lười này :'> )
 - Chall nào mình thấy hơi khó hiểu thì sẽ giải thích một xíu nha.
 ## Bandit 0
@@ -338,12 +338,13 @@ cat /tmp/result.txt | grep -v "Wrong!"
 ## Bandit 29->30
   ```ssh bandit30@bandit.labs.overthewire.org -p 2220:xbhV3HpNGlTIdnjUrdAlPzc2L6y9EOnS```
  ![image](https://github.com/TooBunReal/bandit-wu/assets/89735990/8257c668-68ff-4c5a-849e-7a1751c57a8b)
+ 
   pass: ```OoffzGDlzhAlerFJ2cAiz1D41JW1Mhmt```
   
-
 ## Bandit 30->31
   ```ssh bandit31@bandit.labs.overthewire.org -p 2220:OoffzGDlzhAlerFJ2cAiz1D41JW1Mhmt```
   - Ở chall này ta sẽ phải tạo một file key.txt với nội dung cho sẵn và push nó lên repo.
+  - 
   ![image](https://github.com/TooBunReal/bandit-wu/assets/89735990/8078bd52-ec73-4616-9590-f64458136088)
 
   pass: ```rmCBvG56y58BXzv98yZGdO7ATVL5dW8y```
@@ -352,11 +353,15 @@ cat /tmp/result.txt | grep -v "Wrong!"
   ```ssh bandit32@bandit.labs.overthewire.org -p 2220:rmCBvG56y58BXzv98yZGdO7ATVL5dW8y```
   - Ở bài này chúng ta làm quen với escape shell cơ bản, mình hay dùng cách crt+Z những có vẻ không được.
   - Mình đã thử xài ```$0``` để thoát và lấy pass.
+
   ![image](https://github.com/TooBunReal/bandit-wu/assets/89735990/7d81e9a3-8efa-4d63-8412-205c5ecd2ddc)
 
   pass: ```odHo63fHiFqcWWJG9rLiLDtPm45KzUKy```
+  
 ## Bandit 32->33
+
   ```ssh bandit33@bandit.labs.overthewire.org -p 2220:odHo63fHiFqcWWJG9rLiLDtPm45KzUKy```
+  
   ![image](https://github.com/TooBunReal/bandit-wu/assets/89735990/2362b9fa-b423-4dfd-949a-08d5edcdc8ea)
 
 
