@@ -365,7 +365,7 @@ cat /tmp/result.txt | grep -v "Wrong!"
   ![image](https://github.com/TooBunReal/bandit-wu/assets/89735990/2362b9fa-b423-4dfd-949a-08d5edcdc8ea)
 
 
-#END
+# END
 - Oke vậy là mình đã clear được bandit rồi hehe.
 
 
